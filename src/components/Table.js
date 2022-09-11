@@ -15,14 +15,28 @@ const Table = () => {
         <div>
            {
                 users.length > 0 ? 
-                <table className="w-full shadow-md rounded-md bg-white">
+                <table className="text-center w-full shadow-md rounded-md bg-white  border-separate border-spacing-1 border-slate-500">
                     <thead>
                         <tr>
+                            {/* map over one user object keys */}
                             {
-                                Object.keys(users[0]).map((title,index) => <th className="px-2 text-slate-800" key={index}>{title}</th>)
+                                Object.keys(users[0]).map((title,index) => <th className="px-1 text-slate-800" key={index}>{title}</th>)
                             }
                         </tr>
                     </thead>
+                    <tbody>
+                          {/* map over each user object values */}   
+                            {
+                               users.map(user => Object.values(user)).map((arrayOfvalues,ind) => {
+                                return <tr className="odd:bg-slate-200 text-slate-700 font-medium text-base">
+                                    {arrayOfvalues.map(value => {
+                                        return typeof value === "string" ? <td>{value}</td> : typeof value === "number" ? <td>{value}</td> : typeof value === "object" ? <td>{Object.values(value)[0]}</td>: <span></span>
+                                    })}
+                                </tr>
+                               })
+                               
+                            }
+                </tbody>
                 </table>
                 : "loading..."
            }
