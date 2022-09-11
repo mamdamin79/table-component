@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;600;700;800&family=Lato:wght@300;700&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700&family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color:#f9fafb;
+  font-family: 'Poppins', sans-serif;
+}
