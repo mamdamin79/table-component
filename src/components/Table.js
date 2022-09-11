@@ -1,15 +1,8 @@
 import { useEffect, useState } from "react";
 import { getUsers } from "../services/api";
 
-const Table = () => {
-    const [users,setUsers] = useState([]);
-    useEffect(()=>{
-        const callApi = async() => {
-            setUsers(await getUsers());
-
-        }
-        callApi();
-    },[])
+const Table = ({users}) => {
+    
     console.log(users);
     return (
         <div>
