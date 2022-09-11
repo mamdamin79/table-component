@@ -15,12 +15,12 @@ const Table = () => {
         <div>
            {
                 users.length > 0 ? 
-                <table>
+                <table className="w-full shadow-md rounded-md bg-white">
                     <thead>
                         <tr>
-                            <th>sddsa</th>
-                            <th>sddsa</th>
-                            <th>sddsa</th>
+                            {
+                                Object.keys(users[0]).map((title,index) => <th className="px-2 text-slate-800" key={index}>{title}</th>)
+                            }
                         </tr>
                     </thead>
                 </table>
