@@ -15,7 +15,7 @@ const Table = () => {
         <div>
            {
                 users.length > 0 ? 
-                <table className="text-center w-full shadow-md rounded-md bg-white  border-separate border-spacing-1 border-slate-500">
+                <table className=" text-center w-full shadow-lg rounded-md bg-white  border-separate border-spacing-1 border-slate-500">
                     <thead>
                         <tr>
                             {/* map over one user object keys */}
