@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
-import { getUsers } from "../services/api";
 
-const Table = ({users}) => {
+const Table = ({users,searchTerm}) => {
     
     console.log(users);
     return (
@@ -20,7 +18,7 @@ const Table = ({users}) => {
                     <tbody>
                           {/* map over each user object values */}   
                             {
-                               users.map(user => Object.values(user)).map((arrayOfvalues,ind) => {
+                               users.filter(user => user.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())).map(user => Object.values(user)).map((arrayOfvalues,ind) => {
                                 return <tr className="odd:bg-slate-200 text-slate-700 font-medium text-base">
                                     {arrayOfvalues.map(value => {
                                         return typeof value === "string" ? <td>{value}</td> : typeof value === "number" ? <td>{value}</td> : typeof value === "object" ? <td>{Object.values(value)[0]}</td>: <span></span>
